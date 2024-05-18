@@ -1,6 +1,5 @@
 // Used to run and manage sever side elements like routes
 const express = require(`express`)
-
 // I beleive this is for using the index.js for doing it's work or for telling the index.js where to find it while running as a server
 // above inccorect used to perfom call and run routes from 
 const pages = require(`./routes/htmlRoutes`)
