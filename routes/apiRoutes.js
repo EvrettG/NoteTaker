@@ -1,7 +1,6 @@
 // used to handle fetch requests from index.js
 const api = require('express').Router();
-// Where all files are stored
-const noteDB = require('../db/db.json');
+const uuid = require('../helpers/uuid');
 
 const {readFromFile, writeToFile, readAndAppend,} = require("../helpers/fsUtils");
 
@@ -15,16 +14,27 @@ api.get('/notes', (req, res)=>{
 
 api.post('/notes', (req, res)=>{
     console.log(`${req.method} request received to post to notes`);
-    // prepare a response object to send data back to a client
-    let response
+    // Destructures the 
+    const {title, text } = req.body
+    
 
     // check if post request has at least title and text
     if(req.body?.title && req.body?.text) {
-        response = {}
+        const newNote = {
+            title,
+            text,
+            id: uuid()
+        };
+        readAndAppend(newNote,'./db/db.json' )
+        const resonse = {
+            status: 'success',
+            body: newNote,
+        };
+        res.json(resonse);
     } else{
         res.json(`request has been denined must contain title and text`)
     }
-    console.log(req.bodey)
+
 });
 
 api.delete('/notes', (req, res)=>{
