@@ -13,5 +13,9 @@ pages.get('/', (req, res) =>
 pages.get('/notes', (req, res) =>
     res.sendFile(path.join(__dirname, '../public/notes.html'))
 );
+// redirect from wrong pages to main index page
+pages.use((req, res) => {
+    res.redirect('/');
+});
 // exports for use 
 module.exports = pages

@@ -47,12 +47,11 @@ api.delete(`/notes/:id`, (req, res)=>{
             // this function should then run a filter removing any object with the noteID from the db.json
             const newDB = json.filter((note) => note.id !== noteID);
             writeToFile('./db/db.json', newDB);
-
             // NOTE: if noteID is writen as noteId or anything else the proram crashes and kills the database
             res.json(`Note ${noteID} has been deleted`);
         })
     // console.log(`${req.method} request received to post to notes`);
-    // oldNotes = readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+
 })
 
 module.exports = api
