@@ -7,7 +7,6 @@
   - [Instalation instructions](#instalation-instructions)
   - [Usage](#usage)
   - [Contributing](#contributing)
-  - [Tests](#tests)
   - [Technologies Used and/or Depedencies](#technologies-used-and/or-depedencies)
   - [Future updates](#future-updates)
   - [Questions](#questions)
@@ -43,14 +42,9 @@
   - Open a Pull Request
 
 
-  ## Tests
-  <div style="text-align: right;"><sup><a href="#table-of-contents">Table of contents</a></sup> </div>
-  
-
-
   ## Technologies used
 <div style="text-align: right;"><sup><a href="#table-of-contents">Table of contents</a></sup> </div>
-node, npm, express.js and render
+node, npm, express.js, uuid and render
 
 
   ## Future updates
